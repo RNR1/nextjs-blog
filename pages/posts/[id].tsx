@@ -3,8 +3,15 @@ import { getAllPostIds, getPostData } from '../../lib/posts'
 import Head from 'next/head'
 import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
+import PostData from '../../models/Post'
 
-export default function Post({ postData: { title, id, date, contentHtml } }) {
+interface Props {
+	postData: PostData
+}
+
+export default function Post({
+	postData: { title, date, contentHtml }
+}: Props) {
 	return (
 		<Layout>
 			<Head>
